@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { RichText } from 'prismic-reactjs';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
 import dimensions from 'styles/dimensions';
 import Button from 'components/_ui/Button';
 import About from 'components/About';
 import Layout from 'components/Layout';
-import ProjectCard from 'components/ProjectCard';
 
 const Hero = styled('div')`
   padding-top: 2.5em;
@@ -73,7 +72,11 @@ const Hero = styled('div')`
   }
 `;
 
-const Hours = styled('div')``;
+const Hours = styled('div')`
+  width: 100vw;
+  display: flex;
+  align-content: center;
+`;
 
 const Section = styled('div')`
   margin-bottom: 10em;
@@ -89,37 +92,7 @@ const Section = styled('div')`
   }
 `;
 
-const WorkAction = styled(Link)`
-  font-weight: 600;
-  text-decoration: none;
-  color: currentColor;
-  transition: all 150ms ease-in-out;
-  margin-left: auto;
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin: 0 auto;
-  }
-
-  span {
-    margin-left: 1em;
-    transform: translateX(-8px);
-    display: inline-block;
-    transition: transform 400ms ease-in-out;
-  }
-
-  &:hover {
-    color: ${colors.blue500};
-    transition: all 150ms ease-in-out;
-
-    span {
-      transform: translateX(0px);
-      opacity: 1;
-      transition: transform 150ms ease-in-out;
-    }
-  }
-`;
-
-const RenderBody = ({ home, projects, meta }) => (
+const RenderBody = ({ home, meta }) => (
   <>
     <Helmet
       title={meta.title}
@@ -169,22 +142,10 @@ const RenderBody = ({ home, projects, meta }) => (
         <Button>{RichText.render(home.hero_button_text)}</Button>
       </a>
     </Hero>
-    <Hours>{RichText.render(home.hours)}</Hours>
-    <Section>
-      {projects.map((project, i) => (
-        <ProjectCard
-          key={i}
-          category={project.node.project_category}
-          title={project.node.project_title}
-          description={project.node.project_preview_description}
-          thumbnail={project.node.project_preview_thumbnail}
-          uid={project.node._meta.uid}
-        />
-      ))}
-      <WorkAction to={'/work'}>
-        See more work <span>&#8594;</span>
-      </WorkAction>
-    </Section>
+    <Hours>
+      <span>Hours</span>
+      {RichText.render(home.hours)}
+    </Hours>
     <Section>
       {RichText.render(home.about_title)}
       <About bio={home.about_bio} socialLinks={home.about_links} />

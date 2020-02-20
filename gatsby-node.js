@@ -62,8 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
     // The uid you assigned in Prismic is the slug!
     createPage({
       type: 'Project',
-      match: '/work/:uid',
-      path: `/work/${edge.node._meta.uid}`,
+      match: '/about/:uid',
+      path: `/about/${edge.node._meta.uid}`,
       component: projectTemplate,
       context: {
         // Pass the unique ID (uid) through context so the template can filter by it

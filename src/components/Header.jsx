@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
 import dimensions from 'styles/dimensions';
-import Logo from 'components/_ui/Logo';
+import logo from '../images/logo.png';
 
 const HeaderContainer = styled('div')`
   padding-top: 3.75em;
@@ -13,6 +13,7 @@ const HeaderContainer = styled('div')`
 const HeaderContent = styled('div')`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const HeaderLinks = styled('div')`
@@ -72,15 +73,19 @@ const HeaderLinks = styled('div')`
   }
 `;
 
+const Logo = styled('img')`
+  width: 95px;
+`;
+
 const Header = () => (
   <HeaderContainer>
     <HeaderContent>
       <Link to="/">
-        <Logo />
+        <Logo src={logo} />
       </Link>
       <HeaderLinks>
-        <Link activeClassName="Link--is-active" to="/work">
-          Work
+        <Link activeClassName="Link--is-active" to="/about">
+          About
         </Link>
         <Link activeClassName="Link--is-active" to="/blog">
           Blog

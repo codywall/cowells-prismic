@@ -13,8 +13,8 @@ const WorkTitle = styled('h1')`
 const Work = ({ projects, meta }) => (
   <>
     <Helmet
-      title={`Work | Cowell's Surf Shop`}
-      titleTemplate={`%s | Work | Cowell's Surf Shop`}
+      title={`About | Cowell's Surf Shop`}
+      titleTemplate={`%s | About | Cowell's Surf Shop`}
       meta={[
         {
           name: `description`,
@@ -22,7 +22,7 @@ const Work = ({ projects, meta }) => (
         },
         {
           property: `og:title`,
-          content: `Work | Cowell's Surf Shop`,
+          content: `About | Cowell's Surf Shop`,
         },
         {
           property: `og:description`,
@@ -51,7 +51,7 @@ const Work = ({ projects, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <WorkTitle>Work</WorkTitle>
+      <WorkTitle>About</WorkTitle>
       <>
         {projects.map((project, i) => (
           <ProjectCard
