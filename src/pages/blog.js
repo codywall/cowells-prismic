@@ -1,17 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { graphql } from "gatsby"
-import styled from "@emotion/styled"
-import dimensions from "styles/dimensions"
-import Layout from "components/Layout"
-import PostCard from "components/PostCard"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import dimensions from 'styles/dimensions';
+import Layout from 'components/Layout';
+import PostCard from 'components/PostCard';
 
-const BlogTitle = styled("h1")`
+const BlogTitle = styled('h1')`
   margin-bottom: 1em;
-`
+`;
 
-const BlogGrid = styled("div")`
+const BlogGrid = styled('div')`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.5em;
@@ -25,7 +25,7 @@ const BlogGrid = styled("div")`
     grid-template-columns: 1fr;
     grid-gap: 2.5em;
   }
-`
+`;
 
 const Blog = ({ posts, meta }) => (
   <>
@@ -84,20 +84,20 @@ const Blog = ({ posts, meta }) => (
       </BlogGrid>
     </Layout>
   </>
-)
+);
 
 export default ({ data }) => {
-  const posts = data.prismic.allPosts.edges
-  const meta = data.site.siteMetadata
-  if (!posts) return null
+  const posts = data.prismic.allPosts.edges;
+  const meta = data.site.siteMetadata;
+  if (!posts) return null;
 
-  return <Blog posts={posts} meta={meta} />
-}
+  return <Blog posts={posts} meta={meta} />;
+};
 
 Blog.propTypes = {
   posts: PropTypes.array.isRequired,
   meta: PropTypes.object.isRequired,
-}
+};
 
 export const query = graphql`
   {
@@ -125,4 +125,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

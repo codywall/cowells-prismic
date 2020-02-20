@@ -1,14 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { graphql } from "gatsby"
-import styled from "@emotion/styled"
-import Layout from "components/Layout"
-import ProjectCard from "components/ProjectCard"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import Layout from 'components/Layout';
+import ProjectCard from 'components/ProjectCard';
 
-const WorkTitle = styled("h1")`
+const WorkTitle = styled('h1')`
   margin-bottom: 1em;
-`
+`;
 
 const Work = ({ projects, meta }) => (
   <>
@@ -66,19 +66,19 @@ const Work = ({ projects, meta }) => (
       </>
     </Layout>
   </>
-)
+);
 
 export default ({ data }) => {
-  const projects = data.prismic.allProjects.edges
-  const meta = data.site.siteMetadata
-  if (!projects) return null
+  const projects = data.prismic.allProjects.edges;
+  const meta = data.site.siteMetadata;
+  if (!projects) return null;
 
-  return <Work projects={projects} meta={meta} />
-}
+  return <Work projects={projects} meta={meta} />;
+};
 
 Work.propTypes = {
   projects: PropTypes.array.isRequired,
-}
+};
 
 export const query = graphql`
   {
@@ -106,4 +106,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -24,9 +24,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-prismic-graphql",
+      resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: "cowells", // (REQUIRED, replace with your own)
+        repositoryName: 'cowells', // (REQUIRED, replace with your own)
         linkResolver: () => post => `/${post.uid}`,
       },
     },
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
         head: true,
       },
     },
@@ -54,4 +54,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

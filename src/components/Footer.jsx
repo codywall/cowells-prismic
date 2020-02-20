@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "@emotion/styled"
-import colors from "styles/colors"
+import React from 'react';
+import styled from '@emotion/styled';
+import colors from 'styles/colors';
 
-const FooterContainer = styled("div")`
+const FooterContainer = styled('div')`
   padding-top: 3.75em;
   padding-bottom: 3em;
   display: flex;
@@ -12,9 +12,9 @@ const FooterContainer = styled("div")`
   svg {
     max-width: 50px;
   }
-`
+`;
 
-const FooterAuthor = styled("a")`
+const FooterAuthor = styled('a')`
   font-size: 0.75em;
   color: ${colors.grey700};
   display: flex;
@@ -35,7 +35,7 @@ const FooterAuthor = styled("a")`
       transform: rotate(360deg);
     }
   }
-`
+`;
 
 const Footer = () => (
   <FooterContainer>
@@ -43,6 +43,6 @@ const Footer = () => (
       © 2020 — Designed & developed by Cody Wall
     </FooterAuthor>
   </FooterContainer>
-)
+);
 
-export default Footer
+export default Footer;

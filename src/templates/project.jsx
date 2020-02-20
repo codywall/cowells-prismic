@@ -1,14 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import styled from "@emotion/styled"
-import colors from "styles/colors"
-import { Link, graphql } from "gatsby"
-import { RichText } from "prismic-reactjs"
-import Button from "components/_ui/Button"
-import Layout from "components/Layout"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from '@emotion/styled';
+import colors from 'styles/colors';
+import { Link, graphql } from 'gatsby';
+import { RichText } from 'prismic-reactjs';
+import Button from 'components/_ui/Button';
+import Layout from 'components/Layout';
 
-const ProjectHeroContainer = styled("div")`
+const ProjectHeroContainer = styled('div')`
   background: ${colors.grey200};
   display: flex;
   justify-content: center;
@@ -21,15 +21,15 @@ const ProjectHeroContainer = styled("div")`
   img {
     max-width: 600px;
   }
-`
+`;
 
-const ProjectTitle = styled("div")`
+const ProjectTitle = styled('div')`
   max-width: 550px;
   margin: 0 auto;
   text-align: center;
-`
+`;
 
-const ProjectBody = styled("div")`
+const ProjectBody = styled('div')`
   max-width: 550px;
   margin: 0 auto;
 
@@ -41,13 +41,13 @@ const ProjectBody = styled("div")`
       width: 100%;
     }
   }
-`
+`;
 
 const WorkLink = styled(Link)`
   margin-top: 3em;
   display: block;
   text-align: center;
-`
+`;
 
 const Project = ({ project, meta }) => {
   return (
@@ -99,24 +99,24 @@ const Project = ({ project, meta }) => {
         )}
         <ProjectBody>
           {RichText.render(project.project_description)}
-          <WorkLink to={"/work"}>
+          <WorkLink to={'/work'}>
             <Button className="Button--secondary">See other work</Button>
           </WorkLink>
         </ProjectBody>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default ({ data }) => {
-  const projectContent = data.prismic.allProjects.edges[0].node
-  const meta = data.site.siteMetadata
-  return <Project project={projectContent} meta={meta} />
-}
+  const projectContent = data.prismic.allProjects.edges[0].node;
+  const meta = data.site.siteMetadata;
+  return <Project project={projectContent} meta={meta} />;
+};
 
 Project.propTypes = {
   project: PropTypes.object.isRequired,
-}
+};
 
 export const query = graphql`
   query ProjectQuery($uid: String) {
@@ -146,4 +146,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
