@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Prist | Gatsby & Prismic Starter`,
-    description: `A starter powered by Gatsby and Prismic to showcase portfolios and blogs.`,
-    author: `Marguerite Roth | marguerite.io`,
+    title: `Cowell's Surf Shop`,
+    description: `The website for the retail and surf rental store Cowell's Surf Shop.`,
+    author: `Cody Wall | codywall.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-prismic-starter-prist`,
+        name: `gatsby-cowells`,
         short_name: `prist`,
         start_url: `/`,
         background_color: `#663399`,
