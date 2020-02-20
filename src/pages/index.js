@@ -167,6 +167,7 @@ const RenderBody = ({ home, projects, meta }) => (
         <Button>{RichText.render(home.hero_button_text)}</Button>
       </a>
     </Hero>
+    <>{RichText.render(home.hours)}</>
     <Section>
       {projects.map((project, i) => (
         <ProjectCard
