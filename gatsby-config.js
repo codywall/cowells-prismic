@@ -34,7 +34,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-cowells`,
-        short_name: `prist`,
+        short_name: `cowells`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
