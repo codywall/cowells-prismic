@@ -15,6 +15,8 @@ const Hero = styled('div')`
   padding-bottom: 3em;
   margin-bottom: 6em;
   max-width: 830px;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-bottom: 3em;
@@ -132,7 +134,7 @@ const RenderBody = ({ home, meta }) => (
         },
       ].concat(meta)}
     />
-    <Hero>
+    <Hero style={{ backgroundImage: `url(${home.hero_image.url})` }}>
       <>{RichText.render(home.hero_title)}</>
       <a
         href={home.hero_button_link.url}
@@ -154,6 +156,7 @@ const RenderBody = ({ home, meta }) => (
 );
 
 export default ({ data }) => {
+  console.log(data)
   //Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const projects = data.prismic.allProjects.edges;
@@ -181,6 +184,7 @@ export const query = graphql`
         edges {
           node {
             hero_title
+            hero_image
             hero_button_text
             hero_button_link {
               ... on PRISMIC__ExternalLink {
