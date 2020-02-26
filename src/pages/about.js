@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import Layout from 'components/Layout';
-import ProjectCard from 'components/ProjectCard';
+import Layout from '../components/layout';
+import AboutSection from '../components/AboutSection';
 
 const WorkTitle = styled('h1')`
   margin-bottom: 1em;
 `;
 
-const Work = ({ projects, meta }) => (
+const Work = ({ sections, meta }) => (
   <>
     <Helmet
       title={`About | Cowell's Surf Shop`}
@@ -53,14 +53,10 @@ const Work = ({ projects, meta }) => (
     <Layout>
       <WorkTitle>About</WorkTitle>
       <>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            category={project.node.project_category}
-            title={project.node.project_title}
-            description={project.node.project_preview_description}
-            thumbnail={project.node.project_preview_thumbnail}
-            uid={project.node._meta.uid}
+        {sections.map((section, i) => (
+          <AboutSection
+            text={section.node.about_section_text}
+            image={section.node.about_section_image}
           />
         ))}
       </>
@@ -69,31 +65,26 @@ const Work = ({ projects, meta }) => (
 );
 
 export default ({ data }) => {
-  const projects = data.prismic.allProjects.edges;
+  console.log(data);
+  const sections = data.prismic.allAbout_sections.edges;
   const meta = data.site.siteMetadata;
-  if (!projects) return null;
+  if (!sections) return null;
 
-  return <Work projects={projects} meta={meta} />;
+  return <Work meta={meta} sections={sections} />;
 };
 
 Work.propTypes = {
-  projects: PropTypes.array.isRequired,
+  sections: PropTypes.array.isRequired,
 };
 
 export const query = graphql`
   {
     prismic {
-      allProjects {
+      allAbout_sections {
         edges {
           node {
-            project_title
-            project_preview_description
-            project_preview_thumbnail
-            project_category
-            project_post_date
-            _meta {
-              uid
-            }
+            about_section_image
+            about_section_text
           }
         }
       }
