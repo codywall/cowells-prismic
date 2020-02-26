@@ -26,8 +26,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: 'cowells', // (REQUIRED, replace with your own)
+        repositoryName: 'cowells',
         linkResolver: () => post => `/${post.uid}`,
+        path: '/preview',
+        previews: true
       },
     },
     {
