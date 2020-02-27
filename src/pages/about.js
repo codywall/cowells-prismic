@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import AboutSection from '../components/AboutSection';
 
 const WorkTitle = styled('h1')`
