@@ -183,7 +183,6 @@ export const query = graphql`
       allHomepages {
         edges {
           node {
-            about_title
             hero_title
             hero_image
             hero_button_text
