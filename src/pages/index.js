@@ -5,7 +5,7 @@ import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 import Button from 'components/_ui/Button';
 import About from 'components/About';
 import Layout from 'components/Layout';
@@ -18,7 +18,7 @@ const Hero = styled('div')`
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${breakpoints.maxwidthMobile}px) {
     margin-bottom: 3em;
   }
 
@@ -85,7 +85,7 @@ const Section = styled('div')`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     margin-bottom: 4em;
   }
 
@@ -156,7 +156,7 @@ const RenderBody = ({ home, meta }) => (
 );
 
 export default ({ data }) => {
-  console.log(data)
+  console.log(data);
   //Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const projects = data.prismic.allProjects.edges;

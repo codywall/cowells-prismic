@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 import colors from 'styles/colors';
 import PropTypes from 'prop-types';
 
@@ -19,11 +19,11 @@ const ProjectCardContainer = styled(Link)`
     grid-template-columns: 4.5fr 7fr;
   }
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     grid-template-columns: 1fr;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${breakpoints.maxwidthMobile}px) {
     margin-bottom: 2em;
   }
 
@@ -76,7 +76,7 @@ const ProjectCardContent = styled('div')`
     padding: 3.25em 2.5em 2em 2.5em;
   }
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     grid-row: 2;
   }
 `;
@@ -96,7 +96,7 @@ const ProjectCardBlurb = styled('div')`
   margin-top: 0.5em;
   margin-bottom: 5em;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     margin-bottom: 2.5em;
   }
 `;
@@ -125,7 +125,7 @@ const ProjectCardImageContainer = styled('div')`
   padding-left: 2em;
   padding-right: 2em;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     padding-top: 3em;
     max-height: 200px;
     flex-direction: column;
@@ -151,7 +151,7 @@ const ProjectCardImageContainer = styled('div')`
     width: 100%;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
 
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
+    @media (max-width: ${breakpoints.maxwidthTablet}px) {
       max-width: 300px;
     }
   }

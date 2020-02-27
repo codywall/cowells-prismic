@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 
 const ButtonContainer = styled('button')`
   padding: 1em 2em;
@@ -15,7 +15,7 @@ const ButtonContainer = styled('button')`
   position: relative;
   transition: background 100ms ease-in-out;
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${breakpoints.maxwidthMobile}px) {
     padding: 0.8em 1.8em;
     font-size: 1em;
   }

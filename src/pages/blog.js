@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 import Layout from 'components/Layout';
 import PostCard from 'components/PostCard';
 
@@ -21,7 +21,7 @@ const BlogGrid = styled('div')`
     grid-gap: 1.5em;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${breakpoints.maxwidthMobile}px) {
     grid-template-columns: 1fr;
     grid-gap: 2.5em;
   }

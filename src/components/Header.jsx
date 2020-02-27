@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 import logo from '../images/logo.png';
 
 const HeaderContainer = styled('div')`
@@ -24,11 +24,11 @@ const HeaderLinks = styled('div')`
   width: 100%;
   max-width: 200px;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
     grid-gap: 5.5em;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${breakpoints.maxwidthMobile}px) {
     grid-gap: 2.5em;
   }
 

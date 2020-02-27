@@ -1,5 +1,5 @@
-//Dimensions for device media queries and layout padding
-const dimensions = {
+//breakpoints for device media queries and layout padding
+const breakpoints = {
   //pixels
   maxwidthDesktop: 1100,
   maxwidthTablet: 768,
@@ -11,4 +11,4 @@ const dimensions = {
   paddingHorizontalMobile: 2,
 };
 
-export default dimensions;
+export default breakpoints;

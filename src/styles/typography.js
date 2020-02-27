@@ -1,5 +1,5 @@
 import css from '@emotion/css';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 
 const typeStyles = css`
   h1 {
@@ -7,11 +7,11 @@ const typeStyles = css`
     line-height: 1.45;
     font-weight: 800;
 
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
+    @media (max-width: ${breakpoints.maxwidthTablet}px) {
       font-size: 2.25em;
     }
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
+    @media (max-width: ${breakpoints.maxwidthMobile}px) {
       font-size: 2em;
     }
   }

@@ -1,6 +1,6 @@
 import css from '@emotion/css';
 import colors from 'styles/colors';
-import dimensions from 'styles/dimensions';
+import breakpoints from 'styles/breakpoints';
 
 const globalStyles = css`
   html,
@@ -20,7 +20,7 @@ const globalStyles = css`
     color: ${colors.grey900};
     -webkit-font-smoothing: antialiased;
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
+    @media (max-width: ${breakpoints.maxwidthMobile}px) {
       font-size: 14px;
     }
 
