@@ -57,6 +57,7 @@ const Work = ({ sections, meta }) => (
           <AboutSection
             text={section.node.about_section_text}
             image={section.node.about_section_image}
+            key={i}
           />
         ))}
       </>
@@ -65,8 +66,8 @@ const Work = ({ sections, meta }) => (
 );
 
 export default ({ data }) => {
-  console.log(data);
   const sections = data.prismic.allAbout_sections.edges;
+  console.log(sections);
   const meta = data.site.siteMetadata;
   if (!sections) return null;
 
