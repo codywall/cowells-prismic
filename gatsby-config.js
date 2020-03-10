@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Cowell's Surf Shop`,
