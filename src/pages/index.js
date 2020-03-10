@@ -150,8 +150,8 @@ const RenderBody = ({ home, reports, meta }) => (
       {RichText.render(home.hours)}
     </Hours>
     <h3>
-      {/* {reports.swell.minBreakingHeight} - {reports.swell.maxBreakingHeight}{' '}
-      {reports.unit} */}
+      {reports.swell.minBreakingHeight} - {reports.swell.maxBreakingHeight}{' '}
+      {reports.swell.unit} waves today
     </h3>
     <Section>
       {RichText.render(home.about_title)}
@@ -165,7 +165,7 @@ export default ({ data }) => {
   //Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const projects = data.prismic.allProjects.edges;
-  const reports = data.surfReport;
+  const reports = data.allSurfReport.edges[0].node;
   const meta = data.site.siteMetadata;
 
   if (!doc || !projects) return null;
