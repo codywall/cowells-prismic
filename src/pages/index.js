@@ -9,6 +9,7 @@ import breakpoints from 'styles/breakpoints';
 import Button from 'components/_ui/Button';
 import About from 'components/About';
 import Layout from 'components/Layout';
+import moment from 'react-moment';
 
 const Hero = styled('div')`
   padding-top: 2.5em;
@@ -94,7 +95,7 @@ const Section = styled('div')`
   }
 `;
 
-const RenderBody = ({ home, meta }) => (
+const RenderBody = ({ home, reports, meta }) => (
   <>
     <Helmet
       title={meta.title}
@@ -148,6 +149,10 @@ const RenderBody = ({ home, meta }) => (
       <span>Hours</span>
       {RichText.render(home.hours)}
     </Hours>
+    <h3>
+      {/* {reports.swell.minBreakingHeight} - {reports.swell.maxBreakingHeight}{' '}
+      {reports.unit} */}
+    </h3>
     <Section>
       {RichText.render(home.about_title)}
       <About bio={home.about_bio} socialLinks={home.about_links} />
@@ -160,25 +165,47 @@ export default ({ data }) => {
   //Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const projects = data.prismic.allProjects.edges;
+  const reports = data.surfReport;
   const meta = data.site.siteMetadata;
 
   if (!doc || !projects) return null;
 
   return (
     <Layout>
-      <RenderBody home={doc.node} projects={projects} meta={meta} />
+      <RenderBody
+        home={doc.node}
+        reports={reports}
+        projects={projects}
+        meta={meta}
+      />
     </Layout>
   );
 };
 
 RenderBody.propTypes = {
   home: PropTypes.object.isRequired,
-  projects: PropTypes.array.isRequired,
+  reports: PropTypes.array.isRequired,
   meta: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
   {
+    allSurfReport {
+      edges {
+        node {
+          swell {
+            maxBreakingHeight
+            minBreakingHeight
+            unit
+          }
+          condition {
+            temperature
+            unit
+          }
+          timestamp
+        }
+      }
+    }
     prismic {
       allHomepages {
         edges {
