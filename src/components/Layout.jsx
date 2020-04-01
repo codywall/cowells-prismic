@@ -45,14 +45,16 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={`${staticQuery}`}
     render={data => (
-      <LayoutContainer className="div">
-        <Global styles={[globalStyles, typeStyles]} />
-        <div className="Layout">
-          <Header />
-          <main className="Layout__content">{children}</main>
-          <Footer />
-        </div>
-      </LayoutContainer>
+      <>
+        <LayoutContainer className="div">
+          <Global styles={[globalStyles, typeStyles]} />
+          <div className="Layout">
+            <Header />
+            <main className="Layout__content">{children}</main>
+          </div>
+        </LayoutContainer>
+        <Footer />
+      </>
     )}
   />
 );
