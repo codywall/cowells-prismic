@@ -35,13 +35,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-cowells`,
+        name: `Cowell's Surf Shop`,
         short_name: `cowells`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-16x16.png`, // This path is relative to the root of the site.
       },
     },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/

@@ -9,7 +9,6 @@ import breakpoints from 'styles/breakpoints';
 import Button from 'components/_ui/Button';
 import About from 'components/About';
 import Layout from 'components/Layout';
-import moment from 'react-moment';
 
 const Hero = styled('div')`
   padding-top: 2.5em;
@@ -149,13 +148,12 @@ const RenderBody = ({ home, reports, meta }) => (
       <span>Hours</span>
       {RichText.render(home.hours)}
     </Hours>
-    <h3>
-      {reports.swell.minBreakingHeight} - {reports.swell.maxBreakingHeight}{' '}
-      {reports.swell.unit} waves today
-    </h3>
+    {/* <h3>
+      Cowell's is {reports.swell.minBreakingHeight} -{' '}
+      {reports.swell.maxBreakingHeight} {reports.swell.unit} today
+    </h3> */}
     <Section>
-      {RichText.render(home.about_title)}
-      <About bio={home.about_bio} socialLinks={home.about_links} />
+      <About title={home.about_title} bio={home.about_bio} />
     </Section>
   </>
 );
