@@ -9,7 +9,7 @@ const FooterContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.blue900};
+  background-color: ${colors.blue700};
 
   svg {
     max-width: 50px;
@@ -18,13 +18,18 @@ const FooterContainer = styled('div')`
 
 const MapWrapper = styled('div')``;
 
-const FooterAuthor = styled('a')`
+const FooterCopyright = styled('span')`
   font-size: 0.75em;
-  color: ${colors.grey400};
+  color: ${colors.blue100};
+`;
+
+const FooterAuthor = styled('a')`
+  color: ${colors.blue400};
   text-decoration: none;
+  font-weight: 500;
 
   &:hover {
-    color: ${colors.blue400};
+    color: ${colors.blue600};
   }
 `;
 
@@ -36,15 +41,16 @@ const Footer = () => (
         width="100%"
         height="100%"
         frameborder="0"
-        style="border:'0';"
+        style={{ border: '0' }}
         allowfullscreen=""
         aria-hidden="false"
         tabindex="0"
       />
     </MapWrapper>
-    <FooterAuthor href="https://codywall.com">
-      © 2020 Cowell's Surf Shop — Website by Cody Wall
-    </FooterAuthor>
+    <FooterCopyright>
+      © 2020 Cowell's Surf Shop — Website by{' '}
+      <FooterAuthor href="https://codywall.com">Cody Wall</FooterAuthor>
+    </FooterCopyright>
   </FooterContainer>
 );
 
