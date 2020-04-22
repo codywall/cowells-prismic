@@ -46,10 +46,10 @@ const Layout = ({ children }) => (
     query={`${staticQuery}`}
     render={data => (
       <>
+        <Header />
         <LayoutContainer className="div">
           <Global styles={[globalStyles, typeStyles]} />
           <div className="Layout">
-            <Header />
             <main className="Layout__content">{children}</main>
           </div>
         </LayoutContainer>

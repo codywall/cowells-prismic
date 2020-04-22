@@ -6,23 +6,25 @@ import breakpoints from 'styles/breakpoints';
 import logo from '../images/logo.png';
 
 const HeaderContainer = styled('div')`
-  padding-top: 3.75em;
+  margin-top: 0;
+  height: 105px;
+  padding-top: 0.75em;
   padding-bottom: 3em;
+  border-bottom: 9px solid ${colors.blue400};
+  width: 100vw;
 `;
 
 const HeaderContent = styled('div')`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 142px;
 `;
 
-const HeaderLinks = styled('div')`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 7em;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 200px;
+const NavLinks = styled('div')`
+  display: flex;
+  justify-content: flex-start;
+  grid-gap: 4.35em;
 
   @media (max-width: ${breakpoints.maxwidthTablet}px) {
     grid-gap: 5.5em;
@@ -37,44 +39,30 @@ const HeaderLinks = styled('div')`
     text-decoration: none;
     border-bottom: 3px solid transparent;
     font-weight: 600;
-    font-size: 0.95em;
+    font-size: 1rem;
     height: 100%;
-    padding-bottom: 1.25em;
-    padding-top: 0.25em;
     display: block;
     position: relative;
-
-    &:after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      width: 18px;
-      height: 3px;
-      background: transparent;
-      bottom: -3px;
-      right: 50%;
-      margin-right: -9px;
+    &:hover {
+      color: ${colors.blue200};
       transition: 100ms ease-in-out background;
     }
+  }
 
-    &:hover {
-      &:after {
-        background: ${colors.blue500};
-        transition: 100ms ease-in-out background;
-      }
-    }
-
-    &.Link--is-active {
-      &:after {
-        background: ${colors.blue500};
-        transition: 100ms ease-in-out background;
-      }
-    }
+  &.Link--is-active {
+    background: ${colors.blue500};
+    transition: 100ms ease-in-out background;
   }
 `;
 
-const Logo = styled('img')`
+const SocialLinks = styled('div')`
   width: 95px;
+  background: ${colors.blue200};
+  height: 45px;
+`;
+
+const Logo = styled('img')`
+  width: 90px;
 `;
 
 const Header = () => (
@@ -83,14 +71,21 @@ const Header = () => (
       <Link to="/">
         <Logo src={logo} />
       </Link>
-      <HeaderLinks>
+      <NavLinks>
+        <Link activeClassName="Link--is-active" to="/">
+          Home
+        </Link>
         <Link activeClassName="Link--is-active" to="/about">
-          About
+          About Us
         </Link>
         <Link activeClassName="Link--is-active" to="/rentals">
           Rentals
         </Link>
-      </HeaderLinks>
+        <Link activeClassName="Link--is-active" to="/contact">
+          Contact
+        </Link>
+      </NavLinks>
+      <SocialLinks />
     </HeaderContent>
   </HeaderContainer>
 );

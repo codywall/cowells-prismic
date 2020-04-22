@@ -1,4 +1,3 @@
-//theme colors and tints (dark1000 to normal500 to light100)
 const colors = {
   //primary colors
   blue1000: '#003E6B',
