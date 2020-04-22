@@ -6,7 +6,7 @@ const breakpoints = {
   maxwidthMobile: 600,
 
   //ems
-  paddingHorizontalDesktop: 4,
+  paddingHorizontalDesktop: 3,
   paddingHorizontalTablet: 2.5,
   paddingHorizontalMobile: 2,
 };

@@ -14,7 +14,7 @@ const Hero = styled('div')`
   padding-top: 2.5em;
   padding-bottom: 3em;
   margin-bottom: 6em;
-  max-width: 830px;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 
