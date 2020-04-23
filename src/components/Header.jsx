@@ -55,12 +55,6 @@ const NavLinks = styled('div')`
   }
 `;
 
-const SocialLinks = styled('div')`
-  width: 95px;
-  background: ${colors.blue200};
-  height: 45px;
-`;
-
 const Logo = styled('img')`
   width: 90px;
 `;
@@ -85,7 +79,6 @@ const Header = () => (
           Contact
         </Link>
       </NavLinks>
-      <SocialLinks />
     </HeaderContent>
   </HeaderContainer>
 );
