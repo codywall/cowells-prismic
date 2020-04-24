@@ -12,27 +12,35 @@ const HeroWrapper = styled('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 80px;
+  padding-top: 80px;
 `;
+
 const HeroImage = styled('div')`
-  padding-top: 2.5em;
-  padding-bottom: 3em;
-  margin-bottom: 6em;
-  height: 40%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 400px;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
   border-radius: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: inline;
+    margin: 0 auto;
+  }
 `;
 
 const HeroText = styled('div')`
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  height: 450px;
 `;
 
 const Section = styled('div')`
-  margin-bottom: 10em;
-  display: flex;
-  flex-direction: column;
+  padding: 20px 0 1em 5em;
+  text-align: center;
+  margin-bottom: 1em;
 
   @media (max-width: ${breakpoints.maxwidthTablet}px) {
     margin-bottom: 4em;
@@ -86,7 +94,9 @@ const RenderBody = ({ home, reports, meta }) => (
       ].concat(meta)}
     />
     <HeroWrapper>
-      <HeroImage style={{ backgroundImage: `url(${home.hero_image.url})` }} />
+      <HeroImage>
+        <img src={home.hero_image.url} alt="" />
+      </HeroImage>
       <HeroText>
         <Section>
           <About
@@ -98,12 +108,12 @@ const RenderBody = ({ home, reports, meta }) => (
             secondaryLink={home.hero_button_2_Link}
           />
         </Section>
-        <Report>
+        {/* <Report>
           <h3>
             Cowell's is {reports.swell.minBreakingHeight} -{' '}
             {reports.swell.maxBreakingHeight} {reports.swell.unit} today
           </h3>
-        </Report>
+        </Report> */}
       </HeroText>
     </HeroWrapper>
   </>

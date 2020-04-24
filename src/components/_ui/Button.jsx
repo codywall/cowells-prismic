@@ -4,57 +4,31 @@ import colors from 'styles/colors';
 import breakpoints from 'styles/breakpoints';
 
 const ButtonContainer = styled('button')`
-  padding: 1em 2em;
-  background: ${colors.blue400};
+  padding: 1em 1.75em;
+  background: ${colors.yellow500};
   font-weight: 600;
-  color: white;
+  color: ${colors.yellow900};
   outline: none;
   border: none;
-  font-size: 1rem;
-  border-radius: 2px;
+  font-size: 0.9rem;
+  border-radius: 4px;
   position: relative;
   transition: background 100ms ease-in-out;
-
-  @media (max-width: ${breakpoints.maxwidthMobile}px) {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) @media
+    (max-width: ${breakpoints.maxwidthMobile}px) {
     padding: 0.8em 1.8em;
-    font-size: 1em;
+    font-size: 0.9rem;
   }
 
   p {
     margin: 0;
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      135deg,
-      ${colors.pink400} 0%,
-      ${colors.purple400} 100%
-    );
-    z-index: -1;
-  }
-
   &:hover {
     cursor: pointer;
     background: transparent;
     transition: background 100ms ease-in-out;
-  }
-
-  &.Button--secondary {
-    background: ${colors.blue200};
-    color: ${colors.blue600};
-    padding: 0.95em 1.8em;
-    font-size: 0.95rem;
-
-    &:hover {
-      background: ${colors.blue300};
-      transition: background 100ms ease-in-out;
-    }
   }
 `;
 

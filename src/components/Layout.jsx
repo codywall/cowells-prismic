@@ -8,6 +8,7 @@ import typeStyles from 'styles/typography';
 import breakpoints from 'styles/breakpoints';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import colors from 'styles/colors';
 import 'styles/fonts.scss';
 
 const LayoutContainer = styled.div`
@@ -31,6 +32,10 @@ const LayoutContainer = styled.div`
   }
 `;
 
+const LayoutWrapper = styled('div')`
+  background: ${colors.grey100};
+`;
+
 const staticQuery = graphql`
   query SiteTitleQuery {
     site {
@@ -47,12 +52,14 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header />
-        <LayoutContainer className="div">
-          <Global styles={[globalStyles, typeStyles]} />
-          <div className="Layout">
-            <main className="Layout__content">{children}</main>
-          </div>
-        </LayoutContainer>
+        <LayoutWrapper>
+          <LayoutContainer className="div">
+            <Global styles={[globalStyles, typeStyles]} />
+            <div className="Layout">
+              <main className="Layout__content">{children}</main>
+            </div>
+          </LayoutContainer>
+        </LayoutWrapper>
         <Footer />
       </>
     )}
