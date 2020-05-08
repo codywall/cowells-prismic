@@ -4,11 +4,9 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
+import AboutCard from '../components/AboutCard'
+import Intro from '../components/Intro'
 import AboutSection from '../components/AboutSection';
-
-const WorkTitle = styled('h1')`
-  margin-bottom: 1em;
-`;
 
 const Work = ({ sections, meta }) => (
   <>
@@ -51,7 +49,7 @@ const Work = ({ sections, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <WorkTitle>About</WorkTitle>
+      <Intro/>
       <>
         {sections.map((section, i) => (
           <AboutSection
