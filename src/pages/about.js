@@ -4,9 +4,23 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
-import AboutCard from '../components/AboutCard'
 import Intro from '../components/Intro'
 import AboutSection from '../components/AboutSection';
+import Map from '../components/Map';
+
+const AboutWrapper = styled('div')`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0;
+`
+
+const MapWrapper = styled('div')`
+  width: 600px;
+  height: 400px;
+  align-self: center; 
+`
 
 const Work = ({ sections, meta }) => (
   <>
@@ -49,18 +63,27 @@ const Work = ({ sections, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <Intro/>
-      <>
+      <Intro title="About Our Shop"
+        text="We have been a locally owned business for over 20 years, 
+        and have introduced countless people to the joy of surfing. 
+        We have a wide selection of clothing, rentals, and boards."/>
+        <AboutWrapper>
         {sections.map((section, i) => (
           <AboutSection
             text={section.node.about_section_text}
+            title={section.node.about_card_title}
             image={section.node.about_section_image}
             key={i}
           />
         ))}
-      </>
+      </AboutWrapper>
+      <Intro title="Our Location"
+        text="We are located directly across the street from Cowell’s Beach, one of the best beginner surf spots in the United States. Come surf with us today!" />
+      <MapWrapper>
+        <Map />
+      </MapWrapper>
     </Layout>
-  </>
+    </>
 );
 
 export default ({ data }) => {
@@ -84,6 +107,7 @@ export const query = graphql`
           node {
             about_section_image
             about_section_text
+            about_card_title
           }
         }
       }
