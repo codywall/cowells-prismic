@@ -51,9 +51,8 @@ const Section = styled('div')`
   }
 `;
 
-const Report = styled('div')``;
 
-const RenderBody = ({ home, reports, meta }) => (
+const RenderBody = ({ home, meta }) => (
   <>
     <Helmet
       title={meta.title}
@@ -108,12 +107,6 @@ const RenderBody = ({ home, reports, meta }) => (
             secondaryLink={home.hero_button_2_Link}
           />
         </Section>
-        {/* <Report>
-          <h3>
-            Cowell's is {reports.swell.minBreakingHeight} -{' '}
-            {reports.swell.maxBreakingHeight} {reports.swell.unit} today
-          </h3>
-        </Report> */}
       </HeroText>
     </HeroWrapper>
   </>
@@ -122,42 +115,24 @@ const RenderBody = ({ home, reports, meta }) => (
 export default ({ data }) => {
   //Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
-  const reports = data.allSurfReport.edges[0].node;
   const meta = data.site.siteMetadata;
 
   if (!doc) return null;
 
   return (
     <Layout>
-      <RenderBody home={doc.node} reports={reports} meta={meta} />
+      <RenderBody home={doc.node} meta={meta} />
     </Layout>
   );
 };
 
 RenderBody.propTypes = {
   home: PropTypes.object.isRequired,
-  reports: PropTypes.array.isRequired,
   meta: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
   {
-    allSurfReport {
-      edges {
-        node {
-          swell {
-            maxBreakingHeight
-            minBreakingHeight
-            unit
-          }
-          condition {
-            temperature
-            unit
-          }
-          timestamp
-        }
-      }
-    }
     prismic {
       allHomepages {
         edges {
