@@ -14,7 +14,7 @@ const rentalTypes = [
   {
     title: `Beginner Surfboards`,
     text: `Soft boards are the easiest and 
-  safest surfboards to learn on.Everyone starts on one of these.`,
+  safest surfboards to learn on. Everyone starts on one of these.`,
     image: {
       url: skateboards,
       alt: 'skateboards'
@@ -32,7 +32,7 @@ const rentalTypes = [
   {
     title: `Standup Paddleboards`,
     text: `Standup paddleboards are great exercise and an awesome way to 
-    explore the Monterey Bay..`,
+    explore the Monterey Bay.`,
     image: {
       url: skateboards,
       alt: 'skateboards'
@@ -41,14 +41,14 @@ const rentalTypes = [
   {
     title: `Wetsuits`,
     text: `The water is cold out there, so you’ll need a wetsuit to keep warm.
-     We’ve got you covered, no matter what size you are..`,
+     We’ve got you covered, no matter what size you are.`,
     image: {
       url: skateboards,
       alt: 'skateboards'
     }
   },
   {
-    title: `Boogieboards and Skimboards`,
+    title: `Boogieboards & Skimboards`,
     text: `When the waves are flat or you just want to have fun near the sand,
      playing around on one of these is always a great time.`,
     image: {

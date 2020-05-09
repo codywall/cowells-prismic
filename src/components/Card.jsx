@@ -7,7 +7,7 @@ const CardDiv = styled('div')`
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 235px;
+  width: 285px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6;
@@ -50,12 +50,28 @@ const ImageContainer = styled('div')`
 `;
 
 const CardText = styled('div')`
-  background-color: ${colors.cyan100};
+  background-color: ${colors.blue100};
   margin: 10px;
-  height: 180px;
+  height: 200px;
   padding: 15px;
+
+  @media (max-width: 500px) {
+    height: auto;
+  }
+  
+  h4 {
+    margin-bottom: 1px;
+    font-size: 1rem;
+    @media (max-width: 700px) {
+      font-size: 1.1rem;
+    }
+  }
   p {
     font-size: .8rem;
+    @media (max-width: 700px) {
+      font-size: 1rem;
+    }
+
   }
 `;
 

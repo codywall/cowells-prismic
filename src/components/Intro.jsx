@@ -11,6 +11,12 @@ const IntroContainer = styled('div')`
     p {
         font-size: 1em;
     }
+
+    @media (max-width: ${breakpoints.maxwidthTablet}px) {
+        max-width: 85vw;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+    }
 `
 
 const Intro = (props) => (
