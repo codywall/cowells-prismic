@@ -5,10 +5,66 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
 import RentalItem from '../components/RentalItem';
+import Intro from '../components/Intro'
+import Card from '../components/Card'
+import skateboards from '../images/skateboards.jpg'
+import CardWrapper from '../components/CardWrapper'
 
-const RentalTitle = styled('h1')`
-  margin-bottom: 1em;
-`;
+const rentalTypes = [
+  {
+    title: `Beginner Surfboards`,
+    text: `Soft boards are the easiest and 
+  safest surfboards to learn on.Everyone starts on one of these.`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  },
+  {
+    title: `High Performance Boards`,
+    text: `We have a large selection of epoxy and fiberglass shortboards
+     and longboards for advanced surfers.`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  },
+  {
+    title: `Standup Paddleboards`,
+    text: `Standup paddleboards are great exercise and an awesome way to 
+    explore the Monterey Bay..`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  },
+  {
+    title: `Wetsuits`,
+    text: `The water is cold out there, so you’ll need a wetsuit to keep warm.
+     We’ve got you covered, no matter what size you are..`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  },
+  {
+    title: `Boogieboards and Skimboards`,
+    text: `When the waves are flat or you just want to have fun near the sand,
+     playing around on one of these is always a great time.`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  },
+  {
+    title: `Beach Equipment`,
+    text: `We have beach chairs, volleyballs, umbrellas, and more available for daily rental.`,
+    image: {
+      url: skateboards,
+      alt: 'skateboards'
+    }
+  }
+];
 
 const Rentals = ({ rentals, meta }) => (
   <>
@@ -51,7 +107,21 @@ const Rentals = ({ rentals, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <RentalTitle>Rentals</RentalTitle>
+      <Intro title="Rentals"
+        text="We have a large selection of rentals available for daily rental.
+             From beginner boards to high performance shortboards, we have
+             something for everyone." />
+      <CardWrapper>
+        {rentalTypes.map((rentalTypes, i) => (
+          <Card
+            title={<h4>{rentalTypes.title}</h4>}
+            text={<p>{rentalTypes.text}</p>}
+            image={rentalTypes.image}
+            key={i}
+          />
+          ))}
+      </CardWrapper>
+      
       <>
         {rentals.map((rental, i) => (
           <RentalItem

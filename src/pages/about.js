@@ -5,16 +5,10 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro'
-import AboutSection from '../components/AboutSection';
+import Card from '../components/Card';
 import Map from '../components/Map';
-
-const AboutWrapper = styled('div')`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 20px 0;
-`
+import CardWrapper from '../components/CardWrapper';
+import { RichText } from 'prismic-reactjs';
 
 const MapWrapper = styled('div')`
   width: 600px;
@@ -67,16 +61,16 @@ const Work = ({ sections, meta }) => (
         text="We have been a locally owned business for over 20 years, 
         and have introduced countless people to the joy of surfing. 
         We have a wide selection of clothing, rentals, and boards."/>
-        <AboutWrapper>
+        <CardWrapper>
         {sections.map((section, i) => (
-          <AboutSection
-            text={section.node.about_section_text}
-            title={section.node.about_card_title}
+          <Card
+            text={RichText.render(section.node.about_section_text)}
+            title={RichText.render(section.node.about_card_title)}
             image={section.node.about_section_image}
             key={i}
           />
         ))}
-      </AboutWrapper>
+      </CardWrapper>
       <Intro title="Our Location"
         text="We are located directly across the street from Cowell’s Beach, one of the best beginner surf spots in the United States. Come surf with us today!" />
       <MapWrapper>

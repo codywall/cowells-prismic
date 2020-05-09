@@ -1,19 +1,42 @@
 import React from 'react';
-import { RichText } from 'prismic-reactjs';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import colors from 'styles/colors';
 
-const AboutSectionContent = styled('div')`
+const CardDiv = styled('div')`
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 235px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6;
+  margin-bottom: 20px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+
+  @media (min-width: 700px) {
+      max-width: 320px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 980px) {
+    &:nth-child(even) {
+      margin-right: 20px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
 `;
 
-const AboutSectionImageContainer = styled('div')`
+const ImageContainer = styled('div')`
   width: 130px;
   height: 130px;
   align-self: center;
@@ -26,8 +49,8 @@ const AboutSectionImageContainer = styled('div')`
   border: 6px solid white;
 `;
 
-const AboutSectionText = styled('div')`
-  background-color: ${colors.blue200};
+const CardText = styled('div')`
+  background-color: ${colors.cyan100};
   margin: 10px;
   height: 180px;
   padding: 15px;
@@ -36,18 +59,18 @@ const AboutSectionText = styled('div')`
   }
 `;
 
-const AboutSection = ({ title, text, image }) => (
-  <AboutSectionContent>
-    <AboutSectionImageContainer>
+const Card = ({ title, text, image }) => (
+  <CardDiv>
+    <ImageContainer>
       <img style={{ width: '300px' }} src={image.url} alt={image.alt} />
-    </AboutSectionImageContainer>
-    <AboutSectionText>{RichText.render(title)} {RichText.render(text)}</AboutSectionText>
-  </AboutSectionContent>
+    </ImageContainer>
+    <CardText>{title} {text}</CardText>
+  </CardDiv>
 );
 
-export default AboutSection;
+export default Card;
 
-AboutSection.propTypes = {
+Card.propTypes = {
   image: PropTypes.object.isRequired,
   text: PropTypes.array.isRequired,
   title: PropTypes.array.isRequired
