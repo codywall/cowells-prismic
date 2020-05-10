@@ -13,6 +13,9 @@ const HeroWrapper = styled('div')`
   flex-direction: row;
   align-items: center;
   padding-top: 80px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const HeroImage = styled('div')`
@@ -21,12 +24,19 @@ const HeroImage = styled('div')`
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-
   img {
     width: 100%;
     height: 100%;
     display: inline;
     margin: 0 auto;
+  }
+  @media (max-width: 1100px) {
+    width: 40vw;
+    height: 40vw;
+  }
+  @media (max-width: 800px) {
+    width: 50vw;
+    height: 50vw;
   }
 `;
 
@@ -35,12 +45,25 @@ const HeroText = styled('div')`
   flex-direction: column;
   max-width: 600px;
   height: 450px;
+  @media (max-width: 1100px) {
+    max-width: 50vw;
+  }
+  @media (max-width: 800px) {
+    max-width: 95vw;
+    margin-top: 30px;
+  }
+
+
 `;
 
 const Section = styled('div')`
   padding: 20px 0 1em 5em;
   text-align: center;
   margin-bottom: 1em;
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 0;
+  }
 
   @media (max-width: ${breakpoints.maxwidthTablet}px) {
     margin-bottom: 4em;
