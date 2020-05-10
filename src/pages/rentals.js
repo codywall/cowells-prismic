@@ -66,6 +66,16 @@ const rentalTypes = [
   }
 ];
 
+const RentalWrapper = styled('div')`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5%;
+  flex-direction: row;
+  margin: 0 auto;
+  box-sizing: border-box;
+`
+
 const Rentals = ({ rentals, meta }) => (
   <>
     <Helmet
@@ -121,17 +131,17 @@ const Rentals = ({ rentals, meta }) => (
           />
           ))}
       </CardWrapper>
+      <h2>Daily Rates</h2>
       
-      <>
+      <RentalWrapper>
         {rentals.map((rental, i) => (
           <RentalItem
             name={rental.item_name}
             price={rental.item_price}
-            icon={rental.item_icon}
             key={i}
           />
         ))}
-      </>
+      </RentalWrapper>
     </Layout>
   </>
 );
@@ -156,7 +166,6 @@ export const query = graphql`
         edges {
           node {
             item {
-              item_icon
               item_name
               item_price
             }

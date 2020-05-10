@@ -11,7 +11,7 @@ import CardWrapper from '../components/CardWrapper';
 import { RichText } from 'prismic-reactjs';
 
 const MapWrapper = styled('div')`
-  width: 600px;
+  max-width: 800px;
   height: 400px;
   align-self: center; 
 `

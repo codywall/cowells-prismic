@@ -2,35 +2,44 @@ import React from 'react';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
 import Iframe from 'react-iframe';
+import Map from '../components/Map'
 
 const FooterContainer = styled('div')`
-  padding-top: 3.75em;
-  padding-bottom: 3em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${colors.blue700};
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: ${colors.blue1000};
+  color: ${colors.yellow100};
 
   svg {
     max-width: 50px;
   }
 `;
 
-const MapWrapper = styled('div')``;
-
-const FooterCopyright = styled('span')`
-  font-size: 0.75em;
-  color: ${colors.blue100};
-`;
-
-const FooterAuthor = styled('a')`
-  color: ${colors.blue400};
-  text-decoration: none;
-  font-weight: 500;
-
-  &:hover {
-    color: ${colors.blue600};
+const FooterContent = styled('div')`
+  margin: 0 10px;
+  h4 {
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    margin-top: 0;
   }
+  p {
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+  a {
+    color: ${colors.yellow100};
+    text-decoration: none;
+  }
+
+`
+const MapWrapper = styled('div')`
+  height: 70%;
+  max-width: 200px;
 `;
 
 const Footer = ({ data }) => {
@@ -38,24 +47,25 @@ const Footer = ({ data }) => {
 
   return (
     <FooterContainer>
+      <FooterContent>
+        <h4>Follow</h4>
+        <p><a href='facebook'>Facebook</a></p>
+        <p><a href='instagram'>Instagram</a></p>
+      </FooterContent>
+      <FooterContent>
+        <h4>Contact</h4>
+        <p><a href='tel:+1-831-427-2355'>(831) 427-2355</a></p>
+        <p><a href='@mailto:kathy@cowellssurfshop.com'>kathy@cowellssurfshop.com</a></p>
+      </FooterContent>
+      <FooterContent>
+        <h4>Visit</h4>
+        <p>Open 8-5 Daily</p>
+        <p>30 Front St.</p>
+        <p>Santa Cruz, CA 95060</p>
+      </FooterContent>
       <MapWrapper>
-        <span>TODO: Hours</span>
-        {/* {RichText.render(doc.node.hours)} */}
-        <Iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12751.7867129759!2d-122.0238455!3d36.9633303!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x97077c695748cab1!2sCowell&#39;s%20Beach%20Surf%20Shop!5e0!3m2!1sen!2sus!4v1585761904439!5m2!1sen!2sus"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style={{ border: '0' }}
-          allowfullscreen=""
-          aria-hidden="false"
-          tabindex="0"
-        />
+        <Map />
       </MapWrapper>
-      <FooterCopyright>
-        © 2020 Cowell's Surf Shop — Website by{' '}
-        <FooterAuthor href="https://codywall.com">Cody Wall</FooterAuthor>
-      </FooterCopyright>
     </FooterContainer>
   );
 };

@@ -5,19 +5,53 @@ import PropTypes from 'prop-types';
 
 const RentalItemContent = styled('div')`
   display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px 0;
+  width: 260px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6;
+  margin-bottom: 20px;
+  align-items: center;
+
+  @media(min-width: 700px) {
+    max-width: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+      &: nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  @media(min-width: 980px) {
+    &: nth-child(even) {
+      margin-right: 20px;
+    }
+    &: nth-child(3n) {
+      margin-right: 0;
+    }
+  }
 `;
 
-const RentalItemName = styled('div')``;
+const RentalItemName = styled('div')`
+  font-size: 1.2rem;
+  font-weight: 500;
+  p {
+    margin: 0;
+  }
+`;
 
-const RentalItemPrice = styled('div')``;
+const RentalItemPrice = styled('div')`
+  font-size: .9rem;
+  font-weight: 400;
+  p {
+    margin: 0;
+  }
+`;
 
-const RentalItemIcon = styled('div')``;
-
-const RentalItem = ({ icon, name, price }) => (
+const RentalItem = ({ name, price }) => (
   <RentalItemContent>
-    <RentalItemIcon>
-      <img src={icon.url} alt={icon.alt} />
-    </RentalItemIcon>
     <RentalItemName>{RichText.render(name)}</RentalItemName>
     <RentalItemPrice>{RichText.render(price)}</RentalItemPrice>
   </RentalItemContent>
@@ -26,7 +60,6 @@ const RentalItem = ({ icon, name, price }) => (
 export default RentalItem;
 
 RentalItem.propTypes = {
-  icon: PropTypes.object.isRequired,
   name: PropTypes.array.isRequired,
   price: PropTypes.array.isRequired,
 };
