@@ -7,7 +7,13 @@ import Layout from '../components/Layout';
 import RentalItem from '../components/RentalItem';
 import Intro from '../components/Intro'
 import Card from '../components/Card'
+import foamies from '../images/foamies.jpg'
 import skateboards from '../images/skateboards.jpg'
+import surfboards from '../images/surfboards.jpg'
+import paddleboards from '../images/paddleboarding.jpg'
+import wetsuits from '../images/wetsuits.jpg'
+import boogieboard from '../images/boogieboard.jpg'
+import beach from '../images/boardwalk.jpg'
 import CardWrapper from '../components/CardWrapper'
 
 const rentalTypes = [
@@ -16,7 +22,7 @@ const rentalTypes = [
     text: `Soft boards are the easiest and 
   safest surfboards to learn on. Everyone starts on one of these.`,
     image: {
-      url: skateboards,
+      url: foamies,
       alt: 'skateboards'
     }
   },
@@ -25,7 +31,7 @@ const rentalTypes = [
     text: `We have a large selection of epoxy and fiberglass shortboards
      and longboards for advanced surfers.`,
     image: {
-      url: skateboards,
+      url: surfboards,
       alt: 'skateboards'
     }
   },
@@ -34,7 +40,7 @@ const rentalTypes = [
     text: `Standup paddleboards are great exercise and an awesome way to 
     explore the Monterey Bay.`,
     image: {
-      url: skateboards,
+      url: paddleboards,
       alt: 'skateboards'
     }
   },
@@ -43,7 +49,7 @@ const rentalTypes = [
     text: `The water is cold out there, so you’ll need a wetsuit to keep warm.
      We’ve got you covered, no matter what size you are.`,
     image: {
-      url: skateboards,
+      url: wetsuits,
       alt: 'skateboards'
     }
   },
@@ -52,7 +58,7 @@ const rentalTypes = [
     text: `When the waves are flat or you just want to have fun near the sand,
      playing around on one of these is always a great time.`,
     image: {
-      url: skateboards,
+      url: boogieboard,
       alt: 'skateboards'
     }
   },
@@ -60,7 +66,7 @@ const rentalTypes = [
     title: `Beach Equipment`,
     text: `We have beach chairs, volleyballs, umbrellas, and more available for daily rental.`,
     image: {
-      url: skateboards,
+      url: beach,
       alt: 'skateboards'
     }
   }

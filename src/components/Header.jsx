@@ -10,45 +10,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-//   #close__button--wrapper{
-//     position: absolute;
-//     left: 1em;
-//     top: 1em;
-//     width: 15px;
-//     height: 15px;
-//     cursor: pointer;
-//     z - index: 200;
-//   }
-
-//   #close__button {
-//     font - size: 2.25em;
-//     color: $white - color;
-//     background: none;
-//     border: none;
-//   }
-// }
-
-// #nav__modal {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   height: 100vh;
-//   width: 100vw;
-//   background - color: rgba(0, 0, 0, .8);
-//   overflow: hidden;
-//   z - index: 0;
-// }
-
-// .closed {
-//   display: none;
-// }
-
-// .open {
-//   display: block;
-// }
-
-
 const HeaderContainer = styled('div')`
   display: flex;
   align-items: center;
@@ -79,7 +40,7 @@ a {
   color: currentColor;
   text-decoration: none;
   border-bottom: 3px solid transparent;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
   height: 100%;
   display: block;

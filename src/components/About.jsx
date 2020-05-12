@@ -31,11 +31,9 @@ const AboutBio = styled('div')`
     line-height: 44px;
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 22px;
   }
 
   p {
-    font-size: 18px;
     line-height: 33px;
     width: 88%;
     align-self: center;

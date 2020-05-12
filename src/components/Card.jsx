@@ -37,8 +37,8 @@ const CardDiv = styled('div')`
 `;
 
 const ImageContainer = styled('div')`
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   align-self: center;
   z-index: 999;
   margin-top: 10px;
@@ -50,10 +50,10 @@ const ImageContainer = styled('div')`
 `;
 
 const CardText = styled('div')`
-  background-color: ${colors.blue100};
+  background-color: ${colors.cyan100};
   margin: 10px;
   height: 200px;
-  padding: 15px;
+  padding: 20px 15px 10px 10px;
 
   @media (max-width: 500px) {
     height: auto;
