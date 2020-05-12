@@ -61,10 +61,11 @@ const HeaderContainer = styled('div')`
   top: 0;
   width: 100vw;
   z-index: 99999999;
-  margin: 0 0 40px 0;
   transition: top 0.3s;
+  @media (max-width: ${breakpoints.maxwidthTablet}px) {
+    justify-content: space-between;
+  }
 `;
-
 
 const NavLinksDesktop = styled('div')`
     display: none;
@@ -106,18 +107,15 @@ const DesktopWrapper = styled('div')`
 
 const NavLinksMobile = styled('div')`
     transition: left 0.5s ease;
+    align-self: flex-start;
     cursor: pointer;
     font-size: 1.5em;
-    position: fixed;
-    top: 0;
-    width: 100vw;
     z-index: 99;
     button {
-      position: absolute;
       cursor: pointer;
       border:none;
       background-color:transparent;
-      font-size: 4rem;
+      font-size: 2.5rem;
       font-weight: 800;
     }
     @media (min-width: ${breakpoints.maxwidthTablet}px) {
@@ -126,22 +124,18 @@ const NavLinksMobile = styled('div')`
 `
 const MobileWrapper = styled('div')`
   display: none;
-  padding: 110px 0 300px 60px;
-  background: white;
+  padding: 40px;
+  background: ${colors.blue100};
+  border-radius: 8px;
+  box-shadow: 0 4px 6x;
   a {
-    text-decoration: none;
-      display: block;
-      float: left;
-      clear: left;
-      padding: 0.5em 0;
-  }
-  Link {
-    color: white;
+    color: ${colors.blue900};
     margin: 10px;
     display: inline-block;
     padding: 1vw 2vw;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: 800;
   }
   Link: first-child {
     margin-right: auto;
@@ -151,7 +145,7 @@ const Logo = styled('img')`
   width: 90px;
 `;
 
-const ContactLinks = styled('div')`
+const HeaderCorner = styled('div')`
   width: 90px;
   height: 90px;
   display: flex;
@@ -159,6 +153,7 @@ const ContactLinks = styled('div')`
   align-items: center;
   svg {
     font-size: 1.5rem;
+    color: ${colors.grey900};
   }
 `
 
@@ -173,6 +168,27 @@ const burgerToggle = () => {
 
 const Header = () => (
   <HeaderContainer>
+    <NavLinksMobile>
+      <HeaderCorner>
+        <button onClick={burgerToggle} onKeyDown={burgerToggle}>
+          <FontAwesomeIcon icon={faBars} style={{ fontSize: '2.5rem' }} />
+        </button>
+      </HeaderCorner>
+      <MobileWrapper className="narrowLinks">
+        <Link activeClassName="Link--is-active" to="/" onClick={burgerToggle} onKeyDown={burgerToggle}>
+          Home
+        </Link>
+        <Link activeClassName="Link--is-active" to="/about" onClick={burgerToggle} onKeyDown={burgerToggle}>
+          About Us
+        </Link>
+        <Link activeClassName="Link--is-active" to="/rentals" onClick={burgerToggle} onKeyDown={burgerToggle}>
+          Rentals
+        </Link>
+        <Link activeClassName="Link--is-active" to="/contact" onClick={burgerToggle} onKeyDown={burgerToggle}>
+          Contact
+        </Link>
+      </MobileWrapper>
+    </NavLinksMobile>
     <a href="/">
       <Logo src={logo} />
     </a>
@@ -193,29 +209,18 @@ const Header = () => (
       </DesktopWrapper>
     </NavLinksDesktop>
 
-    <NavLinksMobile>
-      <button onClick={burgerToggle} onKeyDown={burgerToggle}>&#9776;</button>
-      <MobileWrapper className="narrowLinks">
-        <Link activeClassName="Link--is-active" to="/" onClick={burgerToggle} onKeyDown={burgerToggle}>
-          Home
-        </Link>
-        <Link activeClassName="Link--is-active" to="/about" onClick={burgerToggle} onKeyDown={burgerToggle}>
-          About Us
-        </Link>
-        <Link activeClassName="Link--is-active" to="/rentals" onClick={burgerToggle} onKeyDown={burgerToggle}>
-          Rentals
-        </Link>
-        <Link activeClassName="Link--is-active" to="/contact" onClick={burgerToggle} onKeyDown={burgerToggle}>
-          Contact
-        </Link>
-      </MobileWrapper>
-    </NavLinksMobile>
-    <ContactLinks>
-      <FontAwesomeIcon icon={faPhoneSquare} />
-      <FontAwesomeIcon icon={faFacebook} />
-      <FontAwesomeIcon icon={faInstagramSquare} />
-    </ContactLinks>
-  </HeaderContainer>
+    <HeaderCorner>
+      <a href="tel:+1-831-427-2355">
+        <FontAwesomeIcon icon={faPhoneSquare} />
+      </a>
+      <a href="https://www.facebook.com/cowellssurfshop/">
+        <FontAwesomeIcon icon={faFacebook} />
+      </a>
+      <a href="https://www.instagram.com/cowellssurfshop/">
+        <FontAwesomeIcon icon={faInstagramSquare} />
+      </a>
+    </HeaderCorner>
+  </HeaderContainer >
 );
 
 export default Header;
