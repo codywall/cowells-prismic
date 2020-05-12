@@ -3,7 +3,46 @@ import { navigate } from 'gatsby-link'
 import Intro from '../../components/Intro'
 import styled from '@emotion/styled';
 import Layout from '../../components/Layout';
+import colors from '../../styles/colors'
 
+
+const Form = styled('form')`
+  margin:0 auto;
+  padding:30px;
+  width:400px;
+  height:auto;
+  overflow:hidden;
+  background:white;
+  border-radius: 8px;
+  label {
+    font-size:14px;
+    color:darkgray;
+    cursor:pointer; 
+  }
+  input, textarea {
+    font-size: 1.1rem;
+    margin:20px 0;
+    padding:15px 10px;
+    width:100%;
+    outline:none;
+    border:1px solid #bbb;
+    border-radius:8px;
+    display:inline-block;
+    box-sizing: border-box;
+  }
+  button {
+    border-radius: 5px;
+    padding:15px 50px;
+    width:auto;
+    background:${colors.cyan700};
+    border:none;
+    color:white;
+    cursor:pointer;
+    display:inline-block;
+    font-size: 1rem;
+  }
+}
+`
 
 function encode(data) {
     return Object.keys(data)
@@ -39,10 +78,9 @@ function encode(data) {
     render() {
       return (
         <Layout>
-                <Intro title='Contact Us'
-                text='Fill out this form with your inquiry and we will get back to you as soon as possible.' />
-                <h1>Contact</h1>
-                <form
+                <Intro title="Contact Us"
+                text="Please fill out this form with your inquiry and we will get back to you as soon as possible." />
+                <Form
                   name="contact-form"
                   method="post"
                   action="/contact/thanks/"
@@ -107,7 +145,7 @@ function encode(data) {
                       Send
                     </button>
                   </div>
-                </form>
+                </Form>
         </Layout>
       )
     }
