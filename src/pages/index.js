@@ -13,6 +13,7 @@ const HeroWrapper = styled('div')`
   flex-direction: row;
   align-items: center;
   padding-top: 80px;
+  padding-bottom: 100px;
   @media (max-width: 800px) {
     flex-direction: column;
   }

@@ -36,6 +36,7 @@ const LayoutContainer = styled.div`
 
 const LayoutWrapper = styled('div')`
   background: ${colors.grey100};
+  padding-top: 90px
 `;
 
 const staticQuery = graphql`

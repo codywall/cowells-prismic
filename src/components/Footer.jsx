@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import colors from 'styles/colors';
-import Iframe from 'react-iframe';
 import Map from '../components/Map'
 
 const FooterContainer = styled('div')`
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,7 +53,7 @@ const Footer = ({ data }) => {
       <FooterContent>
         <h4>Contact</h4>
         <p><a href='tel:+1-831-427-2355'>(831) 427-2355</a></p>
-        <p><a href='@mailto:kathy@cowellssurfshop.com'>kathy@cowellssurfshop.com</a></p>
+        <p><a href='mailto:kathy@cowellssurfshop.com'>kathy@cowellssurfshop.com</a></p>
       </FooterContent>
       <FooterContent>
         <h4>Visit</h4>
