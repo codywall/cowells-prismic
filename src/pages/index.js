@@ -128,7 +128,7 @@ const RenderBody = ({ home, meta }) => (
             primaryText={home.hero_button_1_text}
             primaryLink={home.hero_button_1_link}
             secondaryText={home.hero_button_2_text}
-            secondaryLink={home.hero_button_2_Link}
+            secondaryLink={home.hero_button_2_link}
           />
         </Section>
       </HeroText>

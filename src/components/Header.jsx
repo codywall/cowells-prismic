@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 import colors from 'styles/colors';
 import breakpoints from 'styles/breakpoints';
 import logo from '../images/logo.png';
-import { faBars, faPhone, faPhoneAlt, faPhoneSlash, faPhoneSquare, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import {
-  faFacebook, faInstagram, faFacebookF, faInstagramSquare
+  faFacebook, faInstagramSquare
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
