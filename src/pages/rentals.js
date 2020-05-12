@@ -12,7 +12,7 @@ import surfboards from '../images/surfboards.jpg'
 import paddleboards from '../images/paddleboarding.jpg'
 import wetsuits from '../images/wetsuits.jpg'
 import boogieboard from '../images/boogieboard.jpg'
-import beach from '../images/boardwalk.jpg'
+import beach from '../images/beach.jpg'
 import CardWrapper from '../components/CardWrapper'
 
 const rentalTypes = [
