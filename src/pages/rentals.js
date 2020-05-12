@@ -8,7 +8,6 @@ import RentalItem from '../components/RentalItem';
 import Intro from '../components/Intro'
 import Card from '../components/Card'
 import foamies from '../images/foamies.jpg'
-import skateboards from '../images/skateboards.jpg'
 import surfboards from '../images/surfboards.jpg'
 import paddleboards from '../images/paddleboarding.jpg'
 import wetsuits from '../images/wetsuits.jpg'

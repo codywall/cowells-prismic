@@ -71,7 +71,7 @@ const Work = ({ sections, meta }) => (
           />
         ))}
             </CardWrapper>
-        <form method="post" netlify-honeypot="bot-field" data-netlify="true">
+        <form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
             <label>
                 Email
