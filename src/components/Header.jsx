@@ -4,60 +4,12 @@ import styled from '@emotion/styled';
 import colors from 'styles/colors';
 import breakpoints from 'styles/breakpoints';
 import logo from '../images/logo.png';
+import { faBars, faPhone, faPhoneAlt, faPhoneSlash, faPhoneSquare, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook, faInstagram, faFacebookF, faInstagramSquare
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// .desktop__list {
-//   display: none;
-// }
-
-// nav {
-
-
-
-
-//   .nav__item: first - child {
-//     margin - right: auto;
-//   }
-
-//   .nav__item--active {
-//     color: pink!important;
-//   }
-
-// #menu - toggle {
-//   position: absolute;
-//   left: 1.5em;
-//   top: 1.5em;
-//   cursor: pointer;
-
-//     .line{
-//     width: 30px;
-//     height: 3px;
-//     margin: 8px 0;
-//     background - color: $primary - color;
-//   }
-
-//     .line--last {
-//     width: 20px;
-//   }
-// }
-
-
-
-
-// .nav__link {
-//   color: $white - color;
-// }
-
-// .active{
-//   left: 0;
-// }
-
-// .active:: after {
-//   transform: rotate(45deg);
-// }
-
-//  .active:: before {
-//   transform: rotate(-45deg);
-// }
 
 //   #close__button--wrapper{
 //     position: absolute;
@@ -101,7 +53,7 @@ const HeaderContainer = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding:0;
+  padding: 0 40px;
   height: 90px;
   list-style-type: none;
   background-color: ${colors.grey100};
@@ -199,6 +151,17 @@ const Logo = styled('img')`
   width: 90px;
 `;
 
+const ContactLinks = styled('div')`
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    font-size: 1.5rem;
+  }
+`
+
 const burgerToggle = () => {
   let linksEl = document.querySelector('.narrowLinks');
   if (linksEl.style.display === 'block') {
@@ -247,6 +210,11 @@ const Header = () => (
         </Link>
       </MobileWrapper>
     </NavLinksMobile>
+    <ContactLinks>
+      <FontAwesomeIcon icon={faPhoneSquare} />
+      <FontAwesomeIcon icon={faFacebook} />
+      <FontAwesomeIcon icon={faInstagramSquare} />
+    </ContactLinks>
   </HeaderContainer>
 );
 
