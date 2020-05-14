@@ -14,7 +14,7 @@ const ButtonContainer = styled('button')`
   position: relative;
   transition: background 100ms ease-in-out;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   p {
     margin: 0;
   }
@@ -25,6 +25,7 @@ const ButtonContainer = styled('button')`
   }
   @media (max-width: 450px) {
     margin-bottom: 20px;
+    padding: 0.95em 0.95em;
   }
 `;
 

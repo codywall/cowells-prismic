@@ -18,15 +18,15 @@ const CardDiv = styled('div')`
   }
 
   @media (min-width: 700px) {
-      max-width: 320px;
-      margin-right: 20px;
-      margin-bottom: 20px;
-      &:nth-child(even) {
-        margin-right: 0;
-      }
+    max-width: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    &:nth-child(even) {
+      margin-right: 0;
     }
+  }
 
-    @media (min-width: 980px) {
+  @media (min-width: 980px) {
     &:nth-child(even) {
       margin-right: 20px;
     }
@@ -50,7 +50,7 @@ const ImageContainer = styled('div')`
 `;
 
 const CardText = styled('div')`
-  background-color: ${colors.cyan100};
+  background-color: ${colors.blue100};
   margin: 10px;
   height: 200px;
   padding: 20px 15px 10px 10px;
@@ -58,7 +58,7 @@ const CardText = styled('div')`
   @media (max-width: 500px) {
     height: auto;
   }
-  
+
   h4 {
     margin-bottom: 1px;
     font-size: 1rem;
@@ -67,11 +67,10 @@ const CardText = styled('div')`
     }
   }
   p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     @media (max-width: 700px) {
       font-size: 1rem;
     }
-
   }
 `;
 
@@ -80,7 +79,9 @@ const Card = ({ title, text, image }) => (
     <ImageContainer>
       <img style={{ width: '300px' }} src={image.url} alt={image.alt} />
     </ImageContainer>
-    <CardText>{title} {text}</CardText>
+    <CardText>
+      {title} {text}
+    </CardText>
   </CardDiv>
 );
 
@@ -89,5 +90,5 @@ export default Card;
 Card.propTypes = {
   image: PropTypes.object.isRequired,
   text: PropTypes.array.isRequired,
-  title: PropTypes.array.isRequired
+  title: PropTypes.array.isRequired,
 };

@@ -45,13 +45,12 @@ const ButtonWrapper = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 85%;
+  width: 75%;
   align-self: center;
   @media (max-width: 450px) {
-    flex-direction: column;
+    width: 95%;
   }
 `;
-
 const About = ({
   title,
   bio,
@@ -60,21 +59,21 @@ const About = ({
   secondaryLink,
   secondaryText,
 }) => (
-    <AboutContainer>
-      <AboutBio>
-        {RichText.render(title)}
-        {RichText.render(bio)}
-      </AboutBio>
-      <ButtonWrapper>
-        <a href={primaryLink}>
-          <Button>{primaryText}</Button>
-        </a>
-        <a href={secondaryLink}>
-          <SecondaryButton>{secondaryText}</SecondaryButton>
-        </a>
-      </ButtonWrapper>
-    </AboutContainer>
-  );
+  <AboutContainer>
+    <AboutBio>
+      {RichText.render(title)}
+      {RichText.render(bio)}
+    </AboutBio>
+    <ButtonWrapper>
+      <a href={primaryLink}>
+        <Button>{primaryText}</Button>
+      </a>
+      <a href={secondaryLink}>
+        <SecondaryButton>{secondaryText}</SecondaryButton>
+      </a>
+    </ButtonWrapper>
+  </AboutContainer>
+);
 
 export default About;
 

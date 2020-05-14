@@ -6,11 +6,11 @@ import styled from '@emotion/styled';
 import breakpoints from 'styles/breakpoints';
 import About from 'components/About';
 import Layout from 'components/Layout';
-import swell from '../images/swell.png'
-import weather from '../images/weather.png'
-import temperature from '../images/temperature.png'
-import moment from 'moment'
-import colors from 'styles/colors'
+import swell from '../images/swell.png';
+import weather from '../images/weather.png';
+import temperature from '../images/temperature.png';
+import moment from 'moment';
+import colors from 'styles/colors';
 
 const HeroWrapper = styled('div')`
   width: 100%;
@@ -93,23 +93,25 @@ const SurfReport = styled('div')`
   @media (max-width: 800px) {
     width: 90%;
     padding: 0;
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
-`
+`;
 
 const ReportNodes = styled('div')`
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
-padding: 25px;
-h5 {
-  font-size: .8rem;
-  color: ${colors.grey700};
-}
-h3 {
-  font-size: 1.1rem;
-}
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 25px;
+  h5 {
+    font-size: 0.8rem;
+    color: ${colors.grey700};
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+`;
 const ReportNode = styled('div')`
   width: 30%;
   min-height: 140px;
@@ -124,7 +126,7 @@ const ReportNode = styled('div')`
     margin-top: 5px;
     font-size: 1.3rem;
   }
-`
+`;
 
 const ReportHeadline = styled('div')`
   display: flex;
@@ -138,9 +140,9 @@ const ReportHeadline = styled('div')`
   top: 0;
   span {
     color: white;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-`
+`;
 
 const RenderBody = ({ home, report, meta }) => (
   <>
@@ -203,20 +205,23 @@ const RenderBody = ({ home, report, meta }) => (
             </ReportHeadline>
             <ReportNodes>
               <ReportNode>
-                <h5 style={{marginTop: '22px'}}>Swell</h5>
-                <img src={swell} alt=''/> 
-                <h3>{report.waveHeight.min} -{' '}
-                  {report.waveHeight.max}ft</h3>
+                <h5 style={{ marginTop: '22px' }}>Swell</h5>
+                <img src={swell} alt="" />
+                <h3>
+                  {report.waveHeight.min} - {report.waveHeight.max}ft
+                </h3>
               </ReportNode>
               <ReportNode>
                 <h5>Weather</h5>
-                <img src={weather} alt='' /> 
-                <h3>{report.waterTemp.max}&#176;</h3>
+                <img src={weather} alt="" />
+                <h3>{report.weather.temperature}&#176;</h3>
               </ReportNode>
               <ReportNode>
                 <h5>Water Temp</h5>
-                <img src={temperature} alt=''/> 
-                <h3>{report.weather.temperature}&#176;</h3>
+                <img src={temperature} alt="" />
+                <h3>
+                  {report.waterTemp.min}-{report.waterTemp.max}&#176;
+                </h3>
               </ReportNode>
             </ReportNodes>
           </SurfReport>
@@ -231,7 +236,7 @@ export default ({ data }) => {
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop();
   const meta = data.site.siteMetadata;
   const report = data.allSurfReport.edges[0].node.forecast;
-  console.log(report)
+  console.log(report);
   if (!doc) return null;
 
   return (
@@ -244,7 +249,7 @@ export default ({ data }) => {
 RenderBody.propTypes = {
   home: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired,
-  report: PropTypes.object.isRequired
+  report: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
